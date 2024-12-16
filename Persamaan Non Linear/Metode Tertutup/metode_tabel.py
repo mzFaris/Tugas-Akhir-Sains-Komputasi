@@ -1,8 +1,22 @@
 import math
 
 
+# Contoh fungsi
 def f(x):
     return x + math.exp(x)
+
+
+def main():
+    x_bawah = float(input("Masukkan nilai batas bawah: "))
+    x_atas = float(input("Masukkan nilai batas atas: "))
+    N = int(input("Masukkan jumlah pembagian (N): "))
+    
+    hasil = metode_tabel(x_bawah, x_atas, N)
+    if hasil is not None:
+        print(f"Akar ditemukan: {hasil}")
+    else:
+        print("Akar tidak ditemukan dalam interval yang diberikan.")
+        
 
 def metode_tabel(x_bawah, x_atas, N):
     h = (x_atas - x_bawah) / N
@@ -30,23 +44,14 @@ def metode_tabel(x_bawah, x_atas, N):
     
     return None
 
+
 def print_tabel(tabel):
     print("Tabel nilai fungsi: ")
     print("x\t\t f(x)")
     print("------------------------")
     for x, fx in tabel:
         print(f"{x:.4f}\t\t {fx:.4f}")
-
-def main():
-    x_bawah = float(input("Masukkan nilai batas bawah: "))
-    x_atas = float(input("Masukkan nilai batas atas: "))
-    N = int(input("Masukkan jumlah pembagian (N): "))
-    
-    hasil = metode_tabel(x_bawah, x_atas, N)
-    if hasil is not None:
-        print(f"Akar ditemukan: {hasil}")
-    else:
-        print("Akar tidak ditemukan dalam interval yang diberikan.")
+        
 
 if __name__ == "__main__":
     main()
